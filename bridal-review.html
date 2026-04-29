@@ -1111,12 +1111,10 @@ ${emojiRule}
 - クチコミ文章のみを出力し、前置きや説明文は一切不要`;
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/api/claude', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': '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',
-        'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
