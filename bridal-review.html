@@ -602,20 +602,21 @@ body {
 .paste-clear-btn:hover { border-color: var(--gold); color: var(--gold); }
 /* ネガティブ選択肢のスタイル */
 .opt-item.negative label {
-  border-color: rgba(150,100,100,0.25);
-  color: var(--gray);
+  border-color: rgba(180,60,60,0.25);
+  color: #c0392b;
 }
 .opt-item.negative label:hover {
-  border-color: rgba(180,80,80,0.4);
-  background: rgba(180,80,80,0.04);
+  border-color: rgba(180,60,60,0.5);
+  background: rgba(180,60,60,0.05);
 }
 .opt-item.negative input:checked + label {
-  border-color: rgba(180,80,80,0.5);
-  background: rgba(180,80,80,0.06);
+  border-color: #c0392b;
+  background: rgba(180,60,60,0.08);
+  color: #c0392b;
 }
 .opt-item.negative input:checked + label .cb {
-  background: #a06060;
-  border-color: #a06060;
+  background: #c0392b;
+  border-color: #c0392b;
 }
 /* satisfaction score */
 .score-grid {
@@ -1466,3 +1467,4 @@ function buildQ2() {
 </script>
 </body>
 </html>
+ 
