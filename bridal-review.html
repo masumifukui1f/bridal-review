@@ -132,14 +132,14 @@ body {
   margin-bottom: 16px;
 }
 .welcome-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--gray);
   line-height: 2.1;
   letter-spacing: 0.3px;
   margin-bottom: 24px;
 }
 .welcome-greeting {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--dark);
   line-height: 1.9;
   letter-spacing: 0.5px;
@@ -175,14 +175,14 @@ body {
 .q-num {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--gold);
   letter-spacing: 4px;
   display: block;
   margin-bottom: 7px;
 }
 .q-title {
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--white);
   line-height: 1.7;
@@ -190,7 +190,7 @@ body {
 }
 .q-note {
   margin-top: 6px;
-  font-size: 11px;
+  font-size: 13px;
   color: rgba(232,213,176,0.7);
   letter-spacing: 0.5px;
 }
@@ -205,7 +205,7 @@ body {
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.18s ease;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--dark);
   background: var(--white);
@@ -278,7 +278,7 @@ body {
   flex: 1;
   padding: 16px 12px;
   font-family: 'Noto Serif JP', serif;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 2.5px;
   border: none;
   border-radius: 2px;
@@ -367,7 +367,7 @@ body {
 .result-head-sub { font-size: 10px; color: var(--gold-light); letter-spacing: 1px; margin-top: 3px; }
 .result-body { padding: 24px; }
 .review-text {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 2.1;
   color: var(--dark);
   letter-spacing: 0.3px;
@@ -389,7 +389,7 @@ body {
   border: 1.5px solid var(--gold);
   border-radius: 2px;
   font-family: 'Noto Serif JP', serif;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 2px;
   color: var(--dark);
   cursor: pointer;
@@ -462,6 +462,70 @@ body {
   border: 1px solid var(--border);
 }
 .btn-restart:hover { border-color: rgba(184,150,110,0.5); }
+/* 性別・年齢選択グリッド */
+.gender-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.select-btn {
+  padding: 14px 8px;
+  border: 1.5px solid rgba(184,150,110,0.3);
+  border-radius: 2px;
+  background: var(--white);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  color: var(--dark);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.select-btn:hover { border-color: var(--gold); background: var(--gold-pale); }
+.select-btn.selected { border-color: var(--gold); background: var(--gold); color: var(--white); }
+.select-group-label {
+  font-size: 13px;
+  color: var(--gray);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+/* 自由記述エリア */
+.free-textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(184,150,110,0.35);
+  border-radius: 2px;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  color: var(--dark);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+  line-height: 1.8;
+  resize: vertical;
+  min-height: 100px;
+}
+.free-textarea:focus { border-color: var(--gold); background: var(--gold-pale); }
+.free-textarea::placeholder { color: rgba(122,110,99,0.45); font-size: 13px; }
+/* 免責文 */
+.disclaimer-note {
+  margin: 10px 0 0;
+  padding: 12px 16px;
+  background: rgba(184,150,110,0.08);
+  border-radius: 2px;
+  border-left: 2px solid var(--gold-light);
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
 .footer-note {
   margin: 20px 16px 0;
   text-align: center;
@@ -572,14 +636,14 @@ body {
 </style>
 </head>
 <body>
-
+ 
 <div class="header">
   <span class="header-eyebrow">Bridal Masumi</span>
   <h1>クチコミ作成</h1>
   <div class="header-line"></div>
   <p class="header-sub">あなたのご感想をお聞かせください</p>
 </div>
-
+ 
 <div class="progress-bar-wrap">
   <div class="progress-meta">
     <span id="step-label">STEP 0 / 7</span>
@@ -589,9 +653,9 @@ body {
     <div class="progress-fill" id="progress-fill" style="width:0%"></div>
   </div>
 </div>
-
+ 
 <div class="container">
-
+ 
   <!-- STEP 0: WELCOME -->
   <div class="step active" id="step-0">
     <div class="welcome-wrap">
@@ -606,7 +670,7 @@ body {
     </div>
     <button class="btn-full btn-generate" onclick="goTo(1)">はじめる →</button>
   </div>
-
+ 
   <!-- STEP 1: Q① -->
   <div class="step" id="step-1">
     <div class="q-card">
@@ -637,76 +701,106 @@ body {
       <button class="btn btn-next" onclick="next1()">次へ →</button>
     </div>
   </div>
-
-  <!-- STEP 2: Q② -->
+ 
+  <!-- STEP 2: 性別・年齢 -->
   <div class="step" id="step-2">
     <div class="q-card">
       <div class="q-head">
         <span class="q-num">Question 02</span>
+        <div class="q-title">性別と年代を教えてください</div>
+        <div class="q-note">※ それぞれ1つ選んでください</div>
+      </div>
+      <div class="q-body">
+        <span class="select-group-label">性別</span>
+        <div class="gender-grid">
+          <button class="select-btn" id="g-male" onclick="selectGender('男性')">男性</button>
+          <button class="select-btn" id="g-female" onclick="selectGender('女性')">女性</button>
+          <button class="select-btn" id="g-none" onclick="selectGender('未回答')">未回答</button>
+        </div>
+        <span class="select-group-label" style="margin-top:8px">年代</span>
+        <div class="age-grid">
+          <button class="select-btn" id="a-20" onclick="selectAge('20代以下')">20代以下</button>
+          <button class="select-btn" id="a-30" onclick="selectAge('30代')">30代</button>
+          <button class="select-btn" id="a-40" onclick="selectAge('40代')">40代</button>
+          <button class="select-btn" id="a-50" onclick="selectAge('50代以上')">50代以上</button>
+        </div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-back" onclick="goTo(1)">← 戻る</button>
+      <button class="btn btn-next" onclick="next2ga()">次へ →</button>
+    </div>
+  </div>
+ 
+  <!-- STEP 3: Q② -->
+  <div class="step" id="step-3">
+    <div class="q-card">
+      <div class="q-head">
+        <span class="q-num">Question 03</span>
         <div class="q-title">そのサービスはどういった点で<br>良かったと思われましたか？</div>
         <div class="q-note">※ あてはまるものをすべて選んでください</div>
       </div>
       <div class="q-body" id="q2-body"></div>
     </div>
     <div class="btn-row">
-      <button class="btn btn-back" onclick="goTo(1)">← 戻る</button>
+      <button class="btn btn-back" onclick="goTo(2)">← 戻る</button>
       <button class="btn btn-next" onclick="next2()">次へ →</button>
     </div>
   </div>
-
-  <!-- STEP 3: Q③ -->
-  <div class="step" id="step-3">
+ 
+  <!-- STEP 4: Q③ -->
+  <div class="step" id="step-4">
     <div class="q-card">
       <div class="q-head">
-        <span class="q-num">Question 03</span>
+        <span class="q-num">Question 04</span>
         <div class="q-title">このサービスはどのような方に<br>おすすめしますか？</div>
         <div class="q-note">※ あてはまるものをすべて選んでください</div>
       </div>
       <div class="q-body"><ul class="opt-list" id="q3-list"></ul></div>
     </div>
     <div class="btn-row">
-      <button class="btn btn-back" onclick="goTo(2)">← 戻る</button>
+      <button class="btn btn-back" onclick="goTo(3)">← 戻る</button>
       <button class="btn btn-next" onclick="next3()">次へ →</button>
     </div>
   </div>
-
-  <!-- STEP 4: Q④ -->
-  <div class="step" id="step-4">
+ 
+  <!-- STEP 5: Q④ -->
+  <div class="step" id="step-5">
     <div class="q-card">
       <div class="q-head">
-        <span class="q-num">Question 04</span>
+        <span class="q-num">Question 05</span>
         <div class="q-title">サービスを受ける前と後で、<br>どのような変化がありましたか？</div>
         <div class="q-note">※ あてはまるものをすべて選んでください</div>
       </div>
       <div class="q-body"><ul class="opt-list" id="q4-list"></ul></div>
     </div>
     <div class="btn-row">
-      <button class="btn btn-back" onclick="goTo(3)">← 戻る</button>
+      <button class="btn btn-back" onclick="goTo(4)">← 戻る</button>
       <button class="btn btn-next" onclick="next4()">次へ →</button>
     </div>
   </div>
-
-  <!-- STEP 5: Q⑤ -->
-  <div class="step" id="step-5">
+ 
+  <!-- STEP 6: Q⑤ -->
+  <div class="step" id="step-6">
     <div class="q-card">
       <div class="q-head">
-        <span class="q-num">Question 05</span>
+        <span class="q-num">Question 06</span>
         <div class="q-title">スタッフの対応・店内・衣裳などで<br>感じたことを選んでください</div>
         <div class="q-note">※ あてはまるものをすべて選んでください</div>
       </div>
       <div class="q-body"><ul class="opt-list" id="q5-list"></ul></div>
     </div>
     <div class="btn-row">
-      <button class="btn btn-back" onclick="goTo(4)">← 戻る</button>
+      <button class="btn btn-back" onclick="goTo(5)">← 戻る</button>
       <button class="btn btn-next" onclick="next5()">次へ →</button>
     </div>
   </div>
-
-  <!-- STEP 6: Q⑥ 記述式 -->
-  <div class="step" id="step-6">
+ 
+  <!-- STEP 7: Q⑥ 式場名（記述式） -->
+  <div class="step" id="step-7">
     <div class="q-card">
       <div class="q-head">
-        <span class="q-num">Question 06</span>
+        <span class="q-num">Question 07</span>
         <div class="q-title">紹介していただいた結婚式場・<br>フォトウェディングの撮影場所の<br>名前を教えてください</div>
       </div>
       <div class="q-body">
@@ -723,42 +817,59 @@ body {
       </div>
     </div>
     <div class="btn-row">
-      <button class="btn btn-back" onclick="goTo(5)">← 戻る</button>
+      <button class="btn btn-back" onclick="goTo(6)">← 戻る</button>
       <button class="btn btn-next" onclick="next6()">次へ →</button>
     </div>
   </div>
-
-  <!-- STEP 7: Q⑦ 満足度 -->
-  <div class="step" id="step-7">
+ 
+  <!-- STEP 8: 自由記述 -->
+  <div class="step" id="step-8">
     <div class="q-card">
       <div class="q-head">
-        <span class="q-num">Question 07</span>
+        <span class="q-num">Question 08</span>
+        <div class="q-title">その他、ご自由にお聞かせください</div>
+        <div class="q-note">※ 任意・空欄のままでも構いません</div>
+      </div>
+      <div class="q-body">
+        <textarea class="free-textarea" id="free-text"
+          placeholder="これらの質問以外に、良かった点・印象に残ったこと・改善してほしい点など、何でもご自由にお書きください。"></textarea>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-back" id="free-back-btn" onclick="goBackFromFree()">← 戻る</button>
+      <button class="btn btn-next" onclick="next8()">次へ →</button>
+    </div>
+  </div>
+ 
+  <!-- STEP 9: Q⑦ 満足度 -->
+  <div class="step" id="step-9">
+    <div class="q-card">
+      <div class="q-head">
+        <span class="q-num">Question 09</span>
         <div class="q-title">総合的な満足度を教えてください</div>
         <div class="q-note">※ 1〜10の中から1つ選んでください</div>
       </div>
       <div class="q-body">
-        <div class="score-grid" id="score-grid">
-          <!-- JS で生成 -->
-        </div>
+        <div class="score-grid" id="score-grid"></div>
       </div>
     </div>
     <div class="btn-row">
-      <button class="btn btn-back" id="score-back-btn" onclick="goBackFromScore()">← 戻る</button>
-      <button class="btn btn-next" onclick="next7()">クチコミを作成する ✨</button>
+      <button class="btn btn-back" onclick="goTo(8)">← 戻る</button>
+      <button class="btn btn-next" onclick="next9()">クチコミを作成する ✨</button>
     </div>
   </div>
-
-  <!-- STEP 8: LOADING -->
-  <div class="step" id="step-8">
+ 
+  <!-- STEP 10: LOADING -->
+  <div class="step" id="step-10">
     <div class="loading-wrap">
       <div class="loading-ring"></div>
       <div class="loading-text">クチコミを作成しています</div>
       <div class="loading-sub">AIがあなたの回答を分析中...</div>
     </div>
   </div>
-
-  <!-- STEP 9: RESULT -->
-  <div class="step" id="step-9">
+ 
+  <!-- STEP 11: RESULT -->
+  <div class="step" id="step-11">
     <div class="result-wrap">
       <div class="result-head">
         <span class="result-head-icon">✨</span>
@@ -768,7 +879,10 @@ body {
         </div>
       </div>
       <div class="result-body">
-        <div class="review-text" id="review-output"></div>
+        <div class="disclaimer-note">
+          この文章はお客様の実体験をもとに作成されています。内容に誤りや気になる点がございましたら、投稿前にご自身で修正をお願いいたします。
+        </div>
+        <div class="review-text" id="review-output" style="margin-top:14px"></div>
         <div class="action-btn-row">
           <button class="action-btn btn-remake" onclick="remakeReview()">作り直す</button>
           <button class="action-btn btn-restart" onclick="restartAll()">最初からやりなおす</button>
@@ -778,7 +892,7 @@ body {
         </button>
       </div>
     </div>
-
+ 
     <!-- テスト貼り付けエリア -->
     <div class="paste-test-wrap">
       <div class="paste-test-label">
@@ -810,9 +924,9 @@ body {
     </a>
     <div class="footer-note">ご協力ありがとうございます ― ブライダルマスミ</div>
   </div>
-
+ 
 </div>
-
+ 
 <script>
 const Q2_OPTIONS = {
   a: [
@@ -844,7 +958,7 @@ const Q2_OPTIONS = {
     "予算に合わせた衣裳選びを一緒に考えてくれた"
   ]
 };
-
+ 
 // a+b 同時選択時に意味が近くて重複しがちな項目を除外
 const AB_DEDUP = {
   "予算内で理想に近いプランを紹介してくれた": "予算に合わせた提案をしてくれた",
@@ -859,7 +973,7 @@ const BC_DEDUP = {
   "予算内で理想に近いプランを紹介してくれた": "予算に合わせた衣裳選びを一緒に考えてくれた",
   "衣裳やヘアメイクとの組み合わせも提案してくれた": "スタッフのコーディネート提案が的確だった",
 };
-
+ 
 // フォトウェディング選択者のみ追加される選択肢
 const Q3_PHOTO_EXTRA = [
   "カメラマンを自分たちで選びたい方",
@@ -873,7 +987,7 @@ const Q5_PHOTO_EXTRA = [
   "カメラマンの作風やスタイルを丁寧に説明してくれた",
   "納得いくカメラマンを一緒に探してくれた"
 ];
-
+ 
 const Q3_OPTIONS_BASE = [
   "結婚式やフォトウェディングを検討しているが何から始めればいいかわからない方",
   "予算内で理想を叶えたいと思っている方",
@@ -901,12 +1015,12 @@ const Q5_OPTIONS_BASE = [
   "スタッフが押しつけがましくなく自分たちのペースで選べた",
   "アフターフォローもしっかりしていて安心だった"
 ];
-
-let answers = { services:[], goodPoints:[], recommend:[], change:[], impression:[], venue:'', score:0 };
+ 
+let answers = { services:[], goodPoints:[], recommend:[], change:[], impression:[], venue:'', gender:'', age:'', freeText:'', score:0 };
 let _q3opts = [], _q4opts = [], _q5opts = [];
 let currentStep = 0;
-const TOTAL = 7;
-
+const TOTAL = 9;
+ 
 function getQ3Options() {
   const opts = [...Q3_OPTIONS_BASE];
   if (answers.services.includes('b')) Q3_PHOTO_EXTRA.forEach(o => opts.push(o));
@@ -922,7 +1036,332 @@ function getQ5Options() {
   if (answers.services.includes('b')) Q5_PHOTO_EXTRA.forEach(o => opts.push(o));
   return opts;
 }
-
+ 
+function goTo(n) {
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step-' + currentStep).classList.add('active');
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function updateProgress() {
+  const pct = Math.round((Math.max(0, currentStep) / TOTAL) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('step-label').textContent =
+    currentStep === 0 ? 'STEP 0 / 9' : 'STEP ' + currentStep + ' / 9';
+  document.getElementById('step-pct').textContent = pct + '%';
+}
+ 
+// 性別・年齢選択
+function selectGender(val) {
+  answers.gender = val;
+  document.querySelectorAll('.gender-grid .select-btn').forEach(b => b.classList.remove('selected'));
+  const map = { '男性':'g-male','女性':'g-female','未回答':'g-none' };
+  document.getElementById(map[val]).classList.add('selected');
+}
+function selectAge(val) {
+  answers.age = val;
+  document.querySelectorAll('.age-grid .select-btn').forEach(b => b.classList.remove('selected'));
+  const map = { '20代以下':'a-20','30代':'a-30','40代':'a-40','50代以上':'a-50' };
+  document.getElementById(map[val]).classList.add('selected');
+}
+ 
+function next1() {
+  const checked = [...document.querySelectorAll('input[name="service"]:checked')].map(e => e.value);
+  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
+  answers.services = checked;
+  goTo(2);
+}
+function next2ga() {
+  if (!answers.gender) { alert('性別を選んでください'); return; }
+  if (!answers.age) { alert('年代を選んでください'); return; }
+  buildQ2();
+  goTo(3);
+}
+function buildQ2() {
+  const svcs = answers.services;
+  const seen = new Set(); const opts = [];
+  const excluded = new Set();
+  if (svcs.includes('a') && svcs.includes('b')) Object.keys(AB_DEDUP).forEach(k => excluded.add(k));
+  if (svcs.includes('a') && svcs.includes('c')) Object.keys(AC_DEDUP).forEach(k => excluded.add(k));
+  if (svcs.includes('b') && svcs.includes('c')) Object.keys(BC_DEDUP).forEach(k => excluded.add(k));
+  svcs.forEach(s => {
+    (Q2_OPTIONS[s] || []).forEach(o => {
+      if (!seen.has(o) && !excluded.has(o)) { seen.add(o); opts.push(o); }
+    });
+  });
+  window._q2opts = opts;
+  document.getElementById('q2-body').innerHTML =
+    '<ul class="opt-list">' + opts.map((o, i) =>
+      `<li class="opt-item"><input type="checkbox" id="q2_${i}" name="goodpoint" value="${i}">
+       <label for="q2_${i}"><span class="cb"></span>${o}</label></li>`
+    ).join('') + '</ul>';
+}
+function next2() {
+  const checked = [...document.querySelectorAll('input[name="goodpoint"]:checked')].map(e => window._q2opts[+e.value]);
+  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
+  answers.goodPoints = checked;
+  _q3opts = getQ3Options();
+  buildList('q3-list', _q3opts, 'q3');
+  goTo(4);
+}
+function buildList(id, opts, name) {
+  document.getElementById(id).innerHTML = opts.map((o,i) =>
+    `<li class="opt-item"><input type="checkbox" id="${name}_${i}" name="${name}" value="${i}">
+     <label for="${name}_${i}"><span class="cb"></span>${o}</label></li>`
+  ).join('');
+}
+function next3() {
+  const checked = [...document.querySelectorAll('input[name="q3"]:checked')].map(e => _q3opts[+e.value]);
+  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
+  answers.recommend = checked;
+  _q4opts = getQ4Options();
+  buildList('q4-list', _q4opts, 'q4');
+  goTo(5);
+}
+function next4() {
+  const checked = [...document.querySelectorAll('input[name="q4"]:checked')].map(e => _q4opts[+e.value]);
+  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
+  answers.change = checked;
+  _q5opts = getQ5Options();
+  buildList('q5-list', _q5opts, 'q5');
+  goTo(6);
+}
+function next5() {
+  const checked = [...document.querySelectorAll('input[name="q5"]:checked')].map(e => _q5opts[+e.value]);
+  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
+  answers.impression = checked;
+  if (answers.services.includes('a') || answers.services.includes('b')) {
+    goTo(7);
+  } else {
+    answers.venue = '';
+    goTo(8);
+  }
+}
+function next6() {
+  answers.venue = (document.getElementById('venue-input').value || '').trim();
+  goTo(8);
+}
+function goBackFromFree() {
+  if (answers.services.includes('a') || answers.services.includes('b')) {
+    goTo(7);
+  } else {
+    goTo(6);
+  }
+}
+function next8() {
+  answers.freeText = (document.getElementById('free-text').value || '').trim();
+  buildScoreGrid();
+  goTo(9);
+}
+function next9() {
+  if (!answers.score || answers.score === 0) { alert('満足度を選んでください'); return; }
+  doGenerate();
+}
+ 
+// 満足度グリッド生成（10→1 降順）
+function buildScoreGrid() {
+  const grid = document.getElementById('score-grid');
+  grid.innerHTML = '';
+  for (let i = 10; i >= 1; i--) {
+    const num = i;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'score-btn' + (answers.score === num ? ' selected' : '');
+    btn.textContent = num;
+    btn.addEventListener('click', function() {
+      answers.score = num;
+      document.querySelectorAll('.score-btn').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+    });
+    grid.appendChild(btn);
+  }
+}
+ 
+async function doGenerate() {
+  goTo(10);
+  const svcMap = { a:'結婚式場探しのアドバイス', b:'フォトウェディング探しのアドバイス', c:'婚礼衣装レンタルサービス' };
+  const servicesText = answers.services.map(s => svcMap[s]).join('、');
+  const venueText = answers.venue ? `紹介していただいた式場・撮影場所：${answers.venue}` : '';
+  const freeText = answers.freeText ? `【お客様からの自由コメント】\n${answers.freeText}` : '';
+ 
+  // 満足度スコアによる文体・絵文字ルール
+  let emojiRule = '';
+  if (answers.score >= 9) {
+    emojiRule = `- 絵文字を積極的に活用すること（💍✨💒👗🌸😊🎊など、ブライダルにふさわしい絵文字を3〜5個程度、文中や文末に自然に配置）
+- 文体は少しフランクで親しみやすい口語にすること。友人に話しかけるような温かいトーンで、喜びや感動がストレートに伝わる文章にすること`;
+  } else if (answers.score >= 5) {
+    emojiRule = `- 絵文字は控えめに使用すること（1〜2個程度、文末に自然に配置）
+- 文体は丁寧で落ち着いた口語にすること。礼儀正しさの中に温かみがある、バランスのとれた文章にすること`;
+  } else {
+    emojiRule = `- 絵文字は一切使用しないこと
+- 文体はやや硬めで誠実な印象にすること。感情表現を抑えつつも事実をしっかり伝える、信頼感のある文章にすること`;
+  }
+ 
+  // 性別・年代によるペルソナルール
+  const gender = answers.gender || '未回答';
+  const age = answers.age || '';
+  let personaRule = '';
+  if (gender === '女性' && (age === '20代以下' || age === '30代')) {
+    personaRule = `- 投稿者は${age}の女性。明るくて感情表現が豊かな文体にすること。「すごく」「とっても」「感動しました」など感情を素直に表現する言葉を自然に使うこと`;
+  } else if (gender === '女性' && (age === '40代' || age === '50代以上')) {
+    personaRule = `- 投稿者は${age}の女性。落ち着いた丁寧な言葉遣いにすること。温かみのある文体で、経験や視点の深さが感じられる表現にすること`;
+  } else if (gender === '男性' && (age === '20代以下' || age === '30代')) {
+    personaRule = `- 投稿者は${age}の男性。率直でシンプルな文体にすること。「良かった」「助かった」「おすすめです」など端的な表現を使い、長すぎない男性らしい文体にすること`;
+  } else if (gender === '男性' && (age === '40代' || age === '50代以上')) {
+    personaRule = `- 投稿者は${age}の男性。信頼感のある落ち着いた文体にすること。誠実さが伝わる表現で、簡潔で説得力のある文体にすること`;
+  } else {
+    personaRule = `- 投稿者の性別・年代は未回答。自然で読みやすい口語体にすること`;
+  }
+ 
+  const prompt = `あなたはGoogleクチコミ文章作成の専門家です。
+以下のお客様の回答をもとに、自然で温かみのある、MEO効果の高いGoogleクチコミ文章を作成してください。
+ 
+【利用サービス】
+${servicesText}
+ 
+【サービスの良かった点】
+${answers.goodPoints.map(p=>'・'+p).join('\n')}
+ 
+【おすすめしたい方】
+${answers.recommend.map(r=>'・'+r).join('\n')}
+ 
+【サービス前後の変化】
+${answers.change.map(c=>'・'+c).join('\n')}
+ 
+【スタッフ・店内・衣裳の印象】
+${answers.impression.map(i=>'・'+i).join('\n')}
+ 
+${venueText}
+ 
+${freeText}
+ 
+【作成条件】
+- 店舗名「ブライダルマスミ」を必ず含めること
+- 「結婚式場」「フォトウェディング」「婚礼衣装」「ウェディングドレス」「ブライダル」「式場相談」など、MEO・SEOに効くキーワードを自然に盛り込むこと
+- 式場・撮影場所の名前が入力されている場合は「○○さんを紹介していただきました」という形で自然に含めること
+- お客様からの自由コメントがある場合はその内容を文章に自然に織り込むこと
+- 200〜280文字程度の読みやすい文章にすること
+- 実際のお客様が自分の言葉でスマホから投稿したような、自然でリアルな口語体にすること
+- **や""などの記号は絶対に使わないこと
+- 箇条書きや見出しは使わず、普通の会話文として書くこと
+- 文章全体が流れるように繋がっていること
+- 「スタッフの皆様」「貴店」などの過度に丁寧な表現は避けること
+- 同じ表現・言い回しを繰り返さないこと
+- 感情的な温かみと具体性を両立させること
+- 段落は2〜3つに分けること
+${personaRule}
+${emojiRule}
+- クチコミ文章のみを出力し、前置きや説明文は一切不要`;
+ 
+  try {
+    const res = await fetch('/api/claude', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.[0]?.text || 'クチコミの生成に失敗しました。もう一度お試しください。';
+    document.getElementById('review-output').textContent = text;
+    clearPasteTest();
+    goTo(11);
+  } catch(e) {
+    alert('通信エラーが発生しました。もう一度お試しください。');
+    goTo(9);
+  }
+}
+function remakeReview() { doGenerate(); }
+function restartAll() {
+  answers = { services:[], goodPoints:[], recommend:[], change:[], impression:[], venue:'', gender:'', age:'', freeText:'', score:0 };
+  document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+  document.querySelectorAll('input[type="text"], textarea').forEach(el => el.value = '');
+  document.querySelectorAll('.select-btn').forEach(b => b.classList.remove('selected'));
+  goTo(0);
+}
+function copyReview() {
+  const text = document.getElementById('review-output').textContent;
+  const btn = document.getElementById('copy-btn');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => showCopied(btn)).catch(() => fallbackCopy(text, btn));
+  } else {
+    fallbackCopy(text, btn);
+  }
+}
+function fallbackCopy(text, btn) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.left = '0';
+  ta.style.opacity = '0'; ta.style.fontSize = '16px';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try {
+    const ok = document.execCommand('copy');
+    if (ok) showCopied(btn); else showCopyFail(btn);
+  } catch(e) { showCopyFail(btn); }
+  document.body.removeChild(ta);
+}
+function showCopied(btn) {
+  btn.classList.add('copied');
+  btn.innerHTML = '<span>✅</span><span>コピーしました！</span>';
+  setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '<span>📋</span><span>クチコミをコピーする</span>'; }, 2500);
+}
+function showCopyFail(btn) {
+  btn.innerHTML = '<span>⚠️</span><span>テキストを長押しして手動でコピーしてください</span>';
+  setTimeout(() => { btn.innerHTML = '<span>📋</span><span>クチコミをコピーする</span>'; }, 3500);
+}
+function clearPasteTest() {
+  const ta = document.getElementById('paste-test-area');
+  const st = document.getElementById('paste-test-status');
+  ta.value = ''; st.innerHTML = '';
+  ta.setAttribute('readonly', true);
+  ta.placeholder = 'ここを長押し（またはタップ）して「貼り付け」を選んでください';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const ta = document.getElementById('paste-test-area');
+  if (!ta) return;
+  ta.addEventListener('input', () => {
+    const st = document.getElementById('paste-test-status');
+    const reviewText = document.getElementById('review-output').textContent.trim();
+    const pasted = ta.value.trim();
+    if (!pasted) { st.innerHTML = ''; return; }
+    if (pasted === reviewText) {
+      st.innerHTML = '✅ クチコミ文章が正しく貼り付けられています！';
+      st.style.color = '#2e7d32';
+    } else if (pasted.length > 10) {
+      st.innerHTML = '📝 テキストが貼り付けられました';
+      st.style.color = '#7a6e63';
+    }
+  });
+});
+// init
+_q3opts = getQ3Options();
+_q4opts = getQ4Options();
+_q5opts = getQ5Options();
+buildList('q3-list', _q3opts, 'q3');
+buildList('q4-list', _q4opts, 'q4');
+buildList('q5-list', _q5opts, 'q5');
+updateProgress();
+ 
+function getQ3Options() {
+  const opts = [...Q3_OPTIONS_BASE];
+  if (answers.services.includes('b')) Q3_PHOTO_EXTRA.forEach(o => opts.push(o));
+  return opts;
+}
+function getQ4Options() {
+  const opts = [...Q4_OPTIONS_BASE];
+  if (answers.services.includes('b')) Q4_PHOTO_EXTRA.forEach(o => opts.push(o));
+  return opts;
+}
+function getQ5Options() {
+  const opts = [...Q5_OPTIONS_BASE];
+  if (answers.services.includes('b')) Q5_PHOTO_EXTRA.forEach(o => opts.push(o));
+  return opts;
+}
+ 
 function goTo(n) {
   document.getElementById('step-' + currentStep).classList.remove('active');
   currentStep = n;
@@ -948,7 +1387,7 @@ function buildQ2() {
   const svcs = answers.services;
   const seen = new Set();
   const opts = [];
-
+ 
   // 除外すべき項目を収集（複数サービス選択時の重複）
   const excluded = new Set();
   if (svcs.includes('a') && svcs.includes('b')) {
@@ -960,7 +1399,7 @@ function buildQ2() {
   if (svcs.includes('b') && svcs.includes('c')) {
     Object.keys(BC_DEDUP).forEach(k => excluded.add(k));
   }
-
+ 
   svcs.forEach(s => {
     (Q2_OPTIONS[s] || []).forEach(o => {
       if (!seen.has(o) && !excluded.has(o)) {
@@ -969,7 +1408,7 @@ function buildQ2() {
       }
     });
   });
-
+ 
   window._q2opts = opts;
   document.getElementById('q2-body').innerHTML =
     '<ul class="opt-list">' + opts.map((o, i) =>
@@ -977,260 +1416,6 @@ function buildQ2() {
        <label for="q2_${i}"><span class="cb"></span>${o}</label></li>`
     ).join('') + '</ul>';
 }
-function next2() {
-  const checked = [...document.querySelectorAll('input[name="goodpoint"]:checked')].map(e => window._q2opts[+e.value]);
-  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
-  answers.goodPoints = checked;
-  _q3opts = getQ3Options();
-  buildList('q3-list', _q3opts, 'q3');
-  goTo(3);
-}
-function buildList(id, opts, name) {
-  document.getElementById(id).innerHTML = opts.map((o,i) =>
-    `<li class="opt-item"><input type="checkbox" id="${name}_${i}" name="${name}" value="${i}">
-     <label for="${name}_${i}"><span class="cb"></span>${o}</label></li>`
-  ).join('');
-}
-function next3() {
-  const checked = [...document.querySelectorAll('input[name="q3"]:checked')].map(e => _q3opts[+e.value]);
-  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
-  answers.recommend = checked;
-  _q4opts = getQ4Options();
-  buildList('q4-list', _q4opts, 'q4');
-  goTo(4);
-}
-function next4() {
-  const checked = [...document.querySelectorAll('input[name="q4"]:checked')].map(e => _q4opts[+e.value]);
-  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
-  answers.change = checked;
-  _q5opts = getQ5Options();
-  buildList('q5-list', _q5opts, 'q5');
-  goTo(5);
-}
-function next5() {
-  const checked = [...document.querySelectorAll('input[name="q5"]:checked')].map(e => _q5opts[+e.value]);
-  if (!checked.length) { alert('少なくとも1つ選んでください'); return; }
-  answers.impression = checked;
-  if (answers.services.includes('a') || answers.services.includes('b')) {
-    goTo(6);
-  } else {
-    answers.venue = '';
-    buildScoreGrid();
-    goTo(7);
-  }
-}
-function next6() {
-  answers.venue = (document.getElementById('venue-input').value || '').trim();
-  buildScoreGrid();
-  goTo(7);
-}
-function goBackFromScore() {
-  if (answers.services.includes('a') || answers.services.includes('b')) {
-    goTo(6);
-  } else {
-    goTo(5);
-  }
-}
-
-// 満足度グリッド生成（10→1 降順）
-function buildScoreGrid() {
-  const grid = document.getElementById('score-grid');
-  grid.innerHTML = '';
-  for (let i = 10; i >= 1; i--) {
-    const btn = document.createElement('button');
-    btn.className = 'score-btn' + (answers.score === i ? ' selected' : '');
-    btn.textContent = i;
-    btn.onclick = () => {
-      answers.score = i;
-      document.querySelectorAll('.score-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-    };
-    grid.appendChild(btn);
-  }
-}
-
-function next7() {
-  if (!answers.score) { alert('満足度を選んでください'); return; }
-  doGenerate();
-}
-
-async function doGenerate() {
-  goTo(8);
-  const svcMap = { a:'結婚式場探しのアドバイス', b:'フォトウェディング探しのアドバイス', c:'婚礼衣装レンタルサービス' };
-  const servicesText = answers.services.map(s => svcMap[s]).join('、');
-  const venueText = answers.venue ? `紹介していただいた式場・撮影場所：${answers.venue}` : '';
-
-  // 満足度スコアによる文体・絵文字ルール
-  let emojiRule = '';
-  if (answers.score >= 9) {
-    emojiRule = `- 絵文字を積極的に活用すること（💍✨💒👗🌸😊🎊など、ブライダルにふさわしい絵文字を3〜5個程度、文中や文末に自然に配置）
-- 文体は少しフランクで親しみやすい口語にすること。友人に話しかけるような温かいトーンで、喜びや感動がストレートに伝わる文章にすること`;
-  } else if (answers.score >= 5) {
-    emojiRule = `- 絵文字は控えめに使用すること（1〜2個程度、文末に自然に配置）
-- 文体は丁寧で落ち着いた口語にすること。礼儀正しさの中に温かみがある、バランスのとれた文章にすること`;
-  } else {
-    emojiRule = `- 絵文字は一切使用しないこと
-- 文体はやや硬めで誠実な印象にすること。感情表現を抑えつつも事実をしっかり伝える、信頼感のある文章にすること`;
-  }
-
-  const prompt = `あなたはGoogleクチコミ文章作成の専門家です。
-以下のお客様の回答をもとに、自然で温かみのある、MEO効果の高いGoogleクチコミ文章を作成してください。
-
-【利用サービス】
-${servicesText}
-
-【サービスの良かった点】
-${answers.goodPoints.map(p=>'・'+p).join('\n')}
-
-【おすすめしたい方】
-${answers.recommend.map(r=>'・'+r).join('\n')}
-
-【サービス前後の変化】
-${answers.change.map(c=>'・'+c).join('\n')}
-
-【スタッフ・店内・衣裳の印象】
-${answers.impression.map(i=>'・'+i).join('\n')}
-
-${venueText}
-
-【作成条件】
-- 店舗名「ブライダルマスミ」を必ず含めること
-- 「結婚式場」「フォトウェディング」「婚礼衣装」「ウェディングドレス」「ブライダル」「式場相談」など、MEO・SEOに効くキーワードを自然に盛り込むこと
-- 式場・撮影場所の名前が入力されている場合は「○○さんを紹介していただきました」という形で自然に含めること
-- 200〜280文字程度の読みやすい文章にすること
-- 実際のお客様が自分の言葉でスマホから投稿したような、自然でリアルな口語体にすること
-- **や""などの記号は絶対に使わないこと
-- 箇条書きや見出しは使わず、普通の会話文として書くこと
-- 文章全体が流れるように繋がっていること。単語の羅列や机上の文章にならないよう注意すること
-- 「〜していただき」「〜させていただき」の多用は避け、自然な話し言葉にすること
-- 「スタッフの皆様」「貴店」などの過度に丁寧な表現は避けること
-- 同じ表現・言い回しを繰り返さないこと
-- 感情的な温かみと具体性を両立させること
-- 段落は2〜3つに分けること
-${emojiRule}
-- クチコミ文章のみを出力し、前置きや説明文は一切不要`;
-
-  try {
-    const res = await fetch('/api/claude', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-5',
-        max_tokens: 1000,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-    const data = await res.json();
-    const text = data.content?.[0]?.text || 'クチコミの生成に失敗しました。もう一度お試しください。';
-    document.getElementById('review-output').textContent = text;
-    // 貼り付けエリアを毎回クリア
-    clearPasteTest();
-    goTo(9);
-  } catch(e) {
-    alert('通信エラーが発生しました。もう一度お試しください。');
-    goTo(7);
-  }
-}
-function remakeReview() {
-  doGenerate();
-}
-function restartAll() {
-  answers = { services:[], goodPoints:[], recommend:[], change:[], impression:[], venue:'', score:0 };
-  document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
-  document.querySelectorAll('input[type="text"]').forEach(el => el.value = '');
-  goTo(0);
-}
-function copyReview() {
-  const text = document.getElementById('review-output').textContent;
-  const btn = document.getElementById('copy-btn');
-
-  // まずClipboard APIを試みる
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(() => {
-      showCopied(btn);
-    }).catch(() => {
-      fallbackCopy(text, btn);
-    });
-  } else {
-    fallbackCopy(text, btn);
-  }
-}
-
-function fallbackCopy(text, btn) {
-  // textarea を使ったフォールバック（iframe内・旧ブラウザ対応）
-  const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.position = 'fixed';
-  ta.style.top = '0';
-  ta.style.left = '0';
-  ta.style.opacity = '0';
-  ta.style.fontSize = '16px'; // iOSズーム防止
-  document.body.appendChild(ta);
-  ta.focus();
-  ta.select();
-  try {
-    const ok = document.execCommand('copy');
-    if (ok) showCopied(btn);
-    else showCopyFail(btn);
-  } catch(e) {
-    showCopyFail(btn);
-  }
-  document.body.removeChild(ta);
-}
-
-function showCopied(btn) {
-  btn.classList.add('copied');
-  btn.innerHTML = '<span>✅</span><span>コピーしました！</span>';
-  setTimeout(() => {
-    btn.classList.remove('copied');
-    btn.innerHTML = '<span>📋</span><span>クチコミをコピーする</span>';
-  }, 2500);
-}
-
-function showCopyFail(btn) {
-  btn.innerHTML = '<span>⚠️</span><span>テキストを長押しして手動でコピーしてください</span>';
-  setTimeout(() => {
-    btn.innerHTML = '<span>📋</span><span>クチコミをコピーする</span>';
-  }, 3500);
-}
-
-function clearPasteTest() {
-  const ta = document.getElementById('paste-test-area');
-  const st = document.getElementById('paste-test-status');
-  ta.value = '';
-  st.innerHTML = '';
-  ta.setAttribute('readonly', true);
-  ta.placeholder = 'ここを長押し（またはタップ）して「貼り付け」を選んでください';
-}
-
-// 貼り付け検知
-document.addEventListener('DOMContentLoaded', () => {
-  const ta = document.getElementById('paste-test-area');
-  if (!ta) return;
-  ta.addEventListener('input', () => {
-    const st = document.getElementById('paste-test-status');
-    const reviewText = document.getElementById('review-output').textContent.trim();
-    const pasted = ta.value.trim();
-    if (!pasted) { st.innerHTML = ''; return; }
-    if (pasted === reviewText) {
-      st.innerHTML = '✅ クチコミ文章が正しく貼り付けられています！';
-      st.style.color = '#2e7d32';
-    } else if (reviewText && pasted.length > 10) {
-      st.innerHTML = '📝 テキストが貼り付けられました';
-      st.style.color = '#7a6e63';
-    }
-  });
-});
-// init
-_q3opts = getQ3Options();
-_q4opts = getQ4Options();
-_q5opts = getQ5Options();
-buildList('q3-list', _q3opts, 'q3');
-buildList('q4-list', _q4opts, 'q4');
-buildList('q5-list', _q5opts, 'q5');
-updateProgress();
 </script>
 </body>
 </html>
